@@ -2,6 +2,9 @@
 
 #### Mobile and Tech since 2008-ish
 
+[![yuryv.info](assets/yuryv_info.png)](https://yuryv.info)
+[![DIGITALBY](assets/digitalby.png)](https://digitalby.me)
+
 [![GitHub Follow](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/digitalby)
 [![GitHub Sponsor](https://img.shields.io/badge/GitHub-Sponsor-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/digitalby)
 [![Twitter Follow](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=x)](https://x.com/vashchylau)
