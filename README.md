@@ -13,6 +13,25 @@
 [![LinkedIn Follow](https://img.shields.io/badge/LinkedIn-Follow-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/digitalby)
 [![Discord Follow](https://img.shields.io/badge/Discord-Follow-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/digitalby)
 
+#### As seen on
+
+<p>
+  <img src="assets/logos/lastminute.png" alt="lastminute.com" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/papajohns.svg" alt="Papa John's" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/justeattakeaway.svg" alt="Just Eat Takeaway.com" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/ebay.svg" alt="eBay" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/santander.svg" alt="Santander" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/unicredit.svg" alt="UniCredit" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/bawag.svg" alt="BAWAG Group" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/velobank.svg" alt="VELO Bank Polska" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/temu.svg" alt="TEMU" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/ryanair.svg" alt="Ryanair" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/eu.svg" alt="European Union" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/revolut.svg" alt="Revolut" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/xbox.svg" alt="Xbox" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/amazon.svg" alt="Amazon" height="30">
+</p>
+
 ## Projects
 
 |  |  |
