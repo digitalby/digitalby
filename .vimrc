@@ -26,7 +26,7 @@ set splitbelow              " Open horizontal splits below
 " --- Undo & Clipboard ---
 set undofile                " Persistent undo across sessions
 set mouse=a                 " Enable mouse support
-set clipboard=unnamedplus   " Use system clipboard for yank/paste
+set clipboard=unnamed       " Use system clipboard for yank/paste
 
 " --- UI ---
 set signcolumn=yes          " Always show the sign column (prevents layout shift)
