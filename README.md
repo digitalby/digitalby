@@ -16,7 +16,7 @@
 #### As seen on
 
 <p>
-  <img src="assets/logos/lastminute.png" alt="lastminute.com" height="30">&nbsp;&nbsp;
+  <img src="assets/logos/lastminute.svg" alt="lastminute.com" height="30">&nbsp;&nbsp;
   <img src="assets/logos/papajohns.svg" alt="Papa John's" height="30">&nbsp;&nbsp;
   <img src="assets/logos/justeattakeaway.svg" alt="Just Eat Takeaway.com" height="30">&nbsp;&nbsp;
   <img src="assets/logos/ebay.svg" alt="eBay" height="30">&nbsp;&nbsp;
