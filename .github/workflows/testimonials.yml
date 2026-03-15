@@ -17,6 +17,10 @@ concurrency:
   group: testimonials-${{ github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    working-directory: gen-assets
+
 jobs:
   # ────────────────────────────────────────────────
   lint:
@@ -29,7 +33,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('gen-assets/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm ci
@@ -51,7 +61,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('gen-assets/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm ci
@@ -63,7 +79,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: coverage/
+          path: gen-assets/coverage/
           retention-days: 14
 
   # ────────────────────────────────────────────────
@@ -77,7 +93,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('gen-assets/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm ci
@@ -89,7 +111,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist
-          path: dist/
+          path: gen-assets/dist/
           retention-days: 7
 
   # ────────────────────────────────────────────────
@@ -104,7 +126,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: npm
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('gen-assets/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm ci
@@ -116,7 +144,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: testimonials-output
-          path: output/
+          path: gen-assets/output/
           retention-days: 30
 
       - name: Write job summary
@@ -136,7 +164,7 @@ jobs:
           script: |
             const fs = require('fs');
 
-            const summaryPath = 'output/reports/summary.md';
+            const summaryPath = 'gen-assets/output/reports/summary.md';
             const summary = fs.existsSync(summaryPath)
               ? fs.readFileSync(summaryPath, 'utf8')
               : '_Report not generated — check the workflow logs._';
