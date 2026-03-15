@@ -1,3 +1,5 @@
+import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import { parseLogo, loadLogos } from '../src/generator/logoLoader';
 
@@ -33,8 +35,6 @@ function makeLogoFromContent(content: string, name = 'test'): ReturnType<typeof 
   // Write a temp file and parse it, or mock the FS.
   // For unit tests we call parseLogo directly on a real file path.
   // Here we use a fixture approach writing to a temp path.
-  const os = require('os') as typeof import('os');
-  const fs = require('fs') as typeof import('fs');
   const tmpFile = path.join(os.tmpdir(), `${name}-test.svg`);
   fs.writeFileSync(tmpFile, content, 'utf-8');
   return parseLogo(tmpFile);
@@ -138,15 +138,13 @@ describe('loadLogos', () => {
   });
 
   it('throws when directory has no SVG files', async () => {
-    const os = require('os') as typeof import('os');
-    const fs = require('fs') as typeof import('fs');
     const tmpDir = path.join(os.tmpdir(), 'empty-logos-test');
     fs.mkdirSync(tmpDir, { recursive: true });
     await expect(loadLogos(tmpDir)).rejects.toThrow('No SVG files');
   });
 
   it('loads the real project logos', async () => {
-    const logosDir = path.resolve(__dirname, '../assets/logos');
+    const logosDir = path.resolve(__dirname, '../../assets/logos');
     const logos = await loadLogos(logosDir);
     expect(logos.length).toBeGreaterThan(0);
     expect(logos.every(l => l.svgContent.includes('<svg'))).toBe(true);

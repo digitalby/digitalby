@@ -31,7 +31,7 @@ program
 
 const sharedOptions = (cmd: Command): Command =>
   cmd
-    .option('--logos-dir <dir>',  'Directory containing SVG logo files', 'assets/logos')
+    .option('--logos-dir <dir>',  'Directory containing SVG logo files', '../assets/logos')
     .option('--output-dir <dir>', 'Root output directory',               'output')
     .option('--sizes <list>',     `Comma-separated sizes (${VALID_SIZES.join(',')})`,   DEFAULT_SIZES.join(','))
     .option('--themes <list>',    `Comma-separated themes (${VALID_THEMES.join(',')})`, DEFAULT_THEMES.join(','))
