@@ -1,1 +1,7 @@
+# Claude Code internal files
 .claude
+
+# Editor/OS artefacts
+.DS_Store
+*.un~
+Thumbs.db

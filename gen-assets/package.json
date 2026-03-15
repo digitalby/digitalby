@@ -1,0 +1,36 @@
+{
+  "name": "testimonials-generator",
+  "version": "1.0.0",
+  "description": "SVG testimonial logo strip generator with WCAG legibility, accessibility, and aesthetic analysis",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "generate": "ts-node src/cli.ts all --logos-dir assets/logos --output-dir output",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src tests --ext .ts",
+    "lint:fix": "eslint src tests --ext .ts --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist output coverage"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.14.2",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
