@@ -1,0 +1,11 @@
+# Node.js
+node-modules
+
+# TypeScript compiled output
+dist/
+
+# Generator output (re-created by CI)
+output/
+
+# Test coverage
+coverage/
