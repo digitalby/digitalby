@@ -7,6 +7,9 @@ import { runFullAnalysis } from './analysis/index';
 import { writeAllOutputs } from './reporter/index';
 import { DEFAULT_SIZES, DEFAULT_THEMES, DEFAULT_LAYOUTS } from './config';
 import { Size, Theme, Layout, GeneratorConfig } from './types';
+import { generateBanners } from './banner/generator';
+import { DEFAULT_PLATFORMS, DEFAULT_VARIANTS, DEFAULT_BANNER_THEMES } from './banner/config';
+import { Platform, BannerVariant, BannerTheme, BannerConfig } from './banner/types';
 
 const VALID_SIZES:   Size[]   = ['xs', 'sm', 'md', 'lg', 'xl'];
 const VALID_THEMES:  Theme[]  = ['light', 'dark', 'transparent'];
@@ -119,5 +122,60 @@ sharedOptions(
     .description('Alias for "all"')
     .action(function(this: Command) { void run(this.opts()); }),
 );
+
+const VALID_PLATFORMS: Platform[]      = ['twitter', 'linkedin', 'youtube'];
+const VALID_VARIANTS:  BannerVariant[] = ['basic', 'advanced'];
+const VALID_BANNER_THEMES: BannerTheme[] = ['dark', 'light', 'yellow'];
+
+async function runBanner(opts: {
+  assetsDir: string;
+  logosDir: string;
+  outputDir: string;
+  platforms: string;
+  variants: string;
+  themes: string;
+}): Promise<void> {
+  const platforms = parseList(opts.platforms, VALID_PLATFORMS, 'platform');
+  const variants  = parseList(opts.variants,  VALID_VARIANTS,  'variant');
+  const themes    = parseList(opts.themes,     VALID_BANNER_THEMES, 'theme');
+
+  const config: BannerConfig = {
+    assetsDir: path.resolve(opts.assetsDir),
+    logosDir:  path.resolve(opts.logosDir),
+    outputDir: path.resolve(opts.outputDir),
+    platforms,
+    variants,
+    themes,
+  };
+
+  console.log(chalk.cyan('\n  Banner Generator\n'));
+  console.log(chalk.gray(`  Assets:    ${config.assetsDir}`));
+  console.log(chalk.gray(`  Logos:     ${config.logosDir}`));
+  console.log(chalk.gray(`  Output:    ${config.outputDir}`));
+  console.log(chalk.gray(`  Platforms: ${platforms.join(', ')}`));
+  console.log(chalk.gray(`  Variants:  ${variants.join(', ')}`));
+  console.log(chalk.gray(`  Themes:    ${themes.join(', ')}\n`));
+
+  process.stdout.write(chalk.gray('  Generating banners...'));
+  const result = await generateBanners(config);
+  console.log(chalk.green(` done — ${result.banners.length} SVG(s) written`));
+
+  for (const banner of result.banners) {
+    console.log(chalk.gray(`    ${banner.platform}/${banner.variant}/${banner.theme}.svg  (${banner.width}×${banner.height})`));
+  }
+
+  console.log('');
+}
+
+program
+  .command('banner')
+  .description('Generate social media banner SVGs (basic and advanced variants)')
+  .option('--assets-dir <dir>',   'Directory containing brand PNG assets', '../assets')
+  .option('--logos-dir <dir>',    'Directory containing client SVG logos',  '../assets/logos')
+  .option('--output-dir <dir>',   'Root output directory',                  'output')
+  .option('--platforms <list>',   `Comma-separated platforms (${VALID_PLATFORMS.join(',')})`,    DEFAULT_PLATFORMS.join(','))
+  .option('--variants <list>',    `Comma-separated variants (${VALID_VARIANTS.join(',')})`,     DEFAULT_VARIANTS.join(','))
+  .option('--themes <list>',      `Comma-separated themes (${VALID_BANNER_THEMES.join(',')})`,  DEFAULT_BANNER_THEMES.join(','))
+  .action(function(this: Command) { void runBanner(this.opts()); });
 
 program.parse(process.argv);
