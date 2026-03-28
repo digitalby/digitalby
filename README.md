@@ -39,6 +39,7 @@
 - 🎮 **[Game Pass List for Xbox](https://apps.apple.com/app/id1555055346)** — Browse and track Xbox Cloud Gaming titles.
 - 🕹️ **[Games List Pro for PlayStation](https://apps.apple.com/app/id1573620936)** — Explore and organize your PlayStation game collection.
 - 🧩 **[Widgets](https://apps.apple.com/app/id1531965185)** — The OG widgets app from 2020, as seen on GadgetHacks, Beebom, and TechCrunch.
+- 🎰 **[VegasRank.net](https://vegasrank.net)** — explore the Las Vegas Strip like a local!
 
 ## Open Source
 
