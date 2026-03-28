@@ -44,3 +44,7 @@
 | 🕹️ [Games List Pro for PlayStation](https://apps.apple.com/app/id1573620936) | A gaming app for exploring and organizing PlayStation game collections. |
 | 🧩 [Widgets (formerly Clock Widget)](https://apps.apple.com/app/id1531965185) | The OG widgets app (est. 2020), mentioned by GadgetHacks, Beebom, and TechCrunch. |
 | ⌨️ [Colemak Keyboard Driver](https://github.com/digitalby/Colemak-Driver-Win) | A low-level pure C Windows 7+ keyboard filter driver that adds rough but robust [Colemak](https://en.wikipedia.org/wiki/Colemak) support to your existing QWERTY machine, with an on/off switch. |
+| 🔨 [Auto-Build on Save for IntelliJ](https://github.com/digitalby/auto-build-on-save-intellij) | An Android Studio and JetBrains IDE plugin that triggers an incremental build whenever you save, so your feedback loop stays tight without the manual Cmd+F9. |
+| 📜 [Dostonamer](https://github.com/digitalby/dostonamer) | Generate names like it's the 19th century. |
+| 🎺 [Xcode Sad Trombone](https://github.com/digitalby/xcode-sad-trombone) | Plays a dramatic wah-wah sound cue when your Xcode build fails. For the build that just won't compile. |
+| ⌨️ [CEE IPA Layout](https://github.com/digitalby/cee-ipa-layout) | A Mac keyboard layout for typing the International Phonetic Alphabet. |
