@@ -44,3 +44,7 @@
 | 🕹️ [Games List Pro for PlayStation](https://apps.apple.com/app/id1573620936) | A gaming app for exploring and organizing PlayStation game collections. |
 | 🧩 [Widgets (formerly Clock Widget)](https://apps.apple.com/app/id1531965185) | The OG widgets app (est. 2020), mentioned by GadgetHacks, Beebom, and TechCrunch. |
 | ⌨️ [Colemak Keyboard Driver](https://github.com/digitalby/Colemak-Driver-Win) | A low-level pure C Windows 7+ keyboard filter driver that adds rough but robust [Colemak](https://en.wikipedia.org/wiki/Colemak) support to your existing QWERTY machine, with an on/off switch. |
+
+## Activity
+
+[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=digitalby&theme=react)](https://github.com/ashutosh00710/github-readme-activity-graph)
