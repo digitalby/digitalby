@@ -32,15 +32,18 @@
   <img src="assets/logos/amazon.svg" alt="Amazon" height="30">
 </p>
 
-## Projects
+## Apps
 
-- 🚀 **[Twitter Userscripts](https://github.com/digitalby/twitter-userscripts)** — Accessibility-first power-user scripts for Twitter/X.
-- ☁️ **[Is iCloud's Free Tier Still 5GB?](https://isicloud5gb.lol)** — Yes. Since 2011. Steve Jobs was still alive.
 - 🧠 **[Stimmie](https://stimmie.app)** — Helps Autistic adults unmask and become unashamedly themselves.
 - 🕒 **[My Clock](https://apps.apple.com/app/id1635836532)** — Customizable desktop clock with widgets, live wallpaper, and night light.
 - 🎮 **[Game Pass List for Xbox](https://apps.apple.com/app/id1555055346)** — Browse and track Xbox Cloud Gaming titles.
 - 🕹️ **[Games List Pro for PlayStation](https://apps.apple.com/app/id1573620936)** — Explore and organize your PlayStation game collection.
 - 🧩 **[Widgets](https://apps.apple.com/app/id1531965185)** — The OG widgets app from 2020, as seen on GadgetHacks, Beebom, and TechCrunch.
+
+## Open Source
+
+- 🚀 **[Twitter Userscripts](https://github.com/digitalby/twitter-userscripts)** — Accessibility-first power-user scripts for Twitter/X.
+- ☁️ **[Is iCloud's Free Tier Still 5GB?](https://isicloud5gb.lol)** — Yes. Since 2011. Steve Jobs was still alive.
 - ⌨️ **[Colemak Keyboard Driver](https://github.com/digitalby/Colemak-Driver-Win)** — Pure C Windows kernel driver that adds [Colemak](https://en.wikipedia.org/wiki/Colemak) to any QWERTY machine, with an on/off toggle.
 - 🔨 **[Auto-Build on Save for IntelliJ](https://github.com/digitalby/auto-build-on-save-intellij)** — Triggers an incremental build on save so you never reach for Cmd+F9 again.
 - 📜 **[Dostonamer](https://github.com/digitalby/dostonamer)** — Generate names like it's the 19th century.
