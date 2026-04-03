@@ -1,0 +1,18 @@
+{
+  "name": "social-stats",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fetch social platform follower counts and update shields.io badges in Markdown files.",
+  "scripts": {
+    "update": "ts-node src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
