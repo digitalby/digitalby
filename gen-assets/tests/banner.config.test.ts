@@ -3,6 +3,7 @@ import {
   BANNER_THEME_CONFIGS,
   BORDER_RATIO,
   FONT_RATIO,
+  FONT_WEIGHT,
   LOGO_H_RATIO,
   STRIP_H_RATIO,
   WORDMARK_ASPECT_RATIO,
@@ -27,6 +28,11 @@ describe('PLATFORM_CONFIGS', () => {
     expect(PLATFORM_CONFIGS.youtube.height).toBe(1440);
   });
 
+  it('defines twitch with standard dimensions', () => {
+    expect(PLATFORM_CONFIGS.twitch.width).toBe(1200);
+    expect(PLATFORM_CONFIGS.twitch.height).toBe(480);
+  });
+
   it('all platforms have positive safeZoneInset', () => {
     for (const config of Object.values(PLATFORM_CONFIGS)) {
       expect(config.safeZoneInset).toBeGreaterThan(0);
@@ -43,6 +49,7 @@ describe('PLATFORM_CONFIGS', () => {
     expect(PLATFORM_CONFIGS.twitter.name).toBe('twitter');
     expect(PLATFORM_CONFIGS.linkedin.name).toBe('linkedin');
     expect(PLATFORM_CONFIGS.youtube.name).toBe('youtube');
+    expect(PLATFORM_CONFIGS.twitch.name).toBe('twitch');
   });
 });
 
@@ -53,10 +60,10 @@ describe('scaling ratios produce sensible pixel values', () => {
     expect(borderPx).toBeLessThanOrEqual(8);
   });
 
-  it('font on twitter is between 30 and 60 px', () => {
+  it('font on twitter is between 40 and 80 px', () => {
     const fontPx = Math.round(PLATFORM_CONFIGS.twitter.height * FONT_RATIO);
-    expect(fontPx).toBeGreaterThanOrEqual(30);
-    expect(fontPx).toBeLessThanOrEqual(60);
+    expect(fontPx).toBeGreaterThanOrEqual(40);
+    expect(fontPx).toBeLessThanOrEqual(80);
   });
 
   it('border scales proportionally: youtube > twitter', () => {
@@ -75,6 +82,51 @@ describe('scaling ratios produce sensible pixel values', () => {
 
   it('logo height ratio is less than or equal to strip height ratio', () => {
     expect(LOGO_H_RATIO).toBeLessThanOrEqual(STRIP_H_RATIO);
+  });
+
+  it('font weight is semibold (600)', () => {
+    expect(FONT_WEIGHT).toBe(600);
+  });
+});
+
+describe('basic banner proportional relationships', () => {
+  // The basic variant is text + border only. These tests enforce that the
+  // text is the dominant element while the border stays subordinate.
+
+  it('font occupies 8-15% of canvas height (dominant but not overwhelming)', () => {
+    expect(FONT_RATIO).toBeGreaterThanOrEqual(0.08);
+    expect(FONT_RATIO).toBeLessThanOrEqual(0.15);
+  });
+
+  it('font-to-border ratio is between 10:1 and 25:1', () => {
+    const ratio = FONT_RATIO / BORDER_RATIO;
+    expect(ratio).toBeGreaterThanOrEqual(10);
+    expect(ratio).toBeLessThanOrEqual(25);
+  });
+
+  it('text height stays within the inner 60% of the canvas on every platform', () => {
+    for (const config of Object.values(PLATFORM_CONFIGS)) {
+      const fontPx = Math.round(config.height * FONT_RATIO);
+      const borderPx = Math.round(config.height * BORDER_RATIO);
+      const innerH = config.height - 2 * (config.safeZoneInset + borderPx);
+      expect(fontPx).toBeLessThanOrEqual(innerH * 0.6);
+    }
+  });
+
+  it('text fits comfortably inside the safe zone on every platform', () => {
+    for (const config of Object.values(PLATFORM_CONFIGS)) {
+      const fontPx = Math.round(config.height * FONT_RATIO);
+      const borderPx = Math.round(config.height * BORDER_RATIO);
+      const safeH = config.height - 2 * (config.safeZoneInset + borderPx);
+      // Text must not exceed 40% of the safe zone height (room to breathe)
+      expect(fontPx).toBeLessThanOrEqual(safeH * 0.4);
+      // Text must be at least 10% of safe zone height (readable)
+      expect(fontPx).toBeGreaterThanOrEqual(safeH * 0.1);
+    }
+  });
+
+  it('border is never thicker than 2% of canvas height', () => {
+    expect(BORDER_RATIO).toBeLessThanOrEqual(0.02);
   });
 });
 
@@ -116,10 +168,11 @@ describe('BANNER_THEME_CONFIGS', () => {
 });
 
 describe('defaults', () => {
-  it('DEFAULT_PLATFORMS includes all three platforms', () => {
+  it('DEFAULT_PLATFORMS includes all four platforms', () => {
     expect(DEFAULT_PLATFORMS).toContain('twitter');
     expect(DEFAULT_PLATFORMS).toContain('linkedin');
     expect(DEFAULT_PLATFORMS).toContain('youtube');
+    expect(DEFAULT_PLATFORMS).toContain('twitch');
   });
 
   it('DEFAULT_VARIANTS includes basic and advanced', () => {

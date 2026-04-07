@@ -80,10 +80,11 @@ describe('renderBannerSvg — basic variant', () => {
     expect(svg).toContain('stroke-width=');
   });
 
-  it('includes centered serif text reading yuryv.info', () => {
+  it('includes centered semibold serif text reading yuryv.info', () => {
     expect(svg).toContain('yuryv.info');
     expect(svg).toContain('text-anchor="middle"');
     expect(svg).toContain('dominant-baseline="central"');
+    expect(svg).toContain('font-weight="600"');
     expect(svg).toContain('Georgia');
     expect(svg).toContain('serif');
   });

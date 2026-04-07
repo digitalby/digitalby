@@ -38,7 +38,8 @@ export const PLATFORM_CONFIGS: Record<Platform, PlatformConfig> = {
 //   px = Math.round(platformHeight * RATIO)
 // Changing a ratio adjusts the visual weight uniformly across all platforms.
 export const BORDER_RATIO   = 0.006;   // ~3px on Twitter (500px), ~9px on YouTube (1440px)
-export const FONT_RATIO     = 0.075;   // ~37px on Twitter, ~108px on YouTube
+export const FONT_RATIO     = 0.11;    // ~55px on Twitter, ~158px on YouTube
+export const FONT_WEIGHT    = 600;     // semibold — visually distinct without overpowering the border
 export const LOGO_H_RATIO   = 0.18;    // wordmark rendered height
 export const STRIP_H_RATIO  = 0.22;    // client logo strip rendered height
 
