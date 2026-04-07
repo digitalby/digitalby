@@ -36,6 +36,7 @@ export interface GeneratedBanner {
   variant: BannerVariant;
   theme: BannerTheme;
   svgPath: string;
+  pngPath: string;
   width: number;
   height: number;
 }

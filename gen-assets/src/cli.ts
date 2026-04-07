@@ -161,7 +161,7 @@ async function runBanner(opts: {
   console.log(chalk.green(` done — ${result.banners.length} SVG(s) written`));
 
   for (const banner of result.banners) {
-    console.log(chalk.gray(`    ${banner.platform}/${banner.variant}/${banner.theme}.svg  (${banner.width}×${banner.height})`));
+    console.log(chalk.gray(`    ${banner.platform}/${banner.variant}/${banner.theme}.svg + .png  (${banner.width}×${banner.height})`));
   }
 
   console.log('');
