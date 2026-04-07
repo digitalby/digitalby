@@ -85,7 +85,7 @@ describe('renderBannerSvg — basic variant', () => {
     expect(svg).toContain('text-anchor="middle"');
     expect(svg).toContain('dominant-baseline="central"');
     expect(svg).toContain('font-weight="600"');
-    expect(svg).toContain('Georgia');
+    expect(svg).toContain('Palatino Linotype');
     expect(svg).toContain('serif');
   });
 

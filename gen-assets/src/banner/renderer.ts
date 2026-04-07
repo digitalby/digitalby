@@ -79,7 +79,7 @@ function renderBasicVariant(
   return [
     `  <rect width="${W}" height="${H}" fill="${theme.background}"/>`,
     renderBorder(W, H, borderPx, theme.borderColor),
-    `  <text x="${W / 2}" y="${H / 2}" font-family="Georgia, 'Times New Roman', serif" font-size="${fontPx}" font-weight="${FONT_WEIGHT}" fill="${theme.textColor}" text-anchor="middle" dominant-baseline="central" letter-spacing="0.04em">yuryv.info</text>`,
+    `  <text x="${W / 2}" y="${H / 2}" font-family="'Palatino Linotype', Palatino, 'Book Antiqua', serif" font-size="${fontPx}" font-weight="${FONT_WEIGHT}" fill="${theme.textColor}" text-anchor="middle" dominant-baseline="central" letter-spacing="0.04em">yuryv.info</text>`,
   ].join('\n');
 }
 
