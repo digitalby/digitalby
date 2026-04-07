@@ -25,6 +25,13 @@ export const PLATFORM_CONFIGS: Record<Platform, PlatformConfig> = {
     // YouTube's safe area is approximately the central 1546×423 region.
     safeZoneInset: 420,
   },
+  twitch: {
+    name: 'twitch',
+    displayName: 'Twitch',
+    width: 1200,
+    height: 480,
+    safeZoneInset: 40,
+  },
 };
 
 // Proportional scaling constants — all derived pixel values are computed as:
@@ -66,6 +73,6 @@ export const BANNER_THEME_CONFIGS: Record<BannerTheme, BannerThemeConfig> = {
   },
 };
 
-export const DEFAULT_PLATFORMS: Platform[]        = ['twitter', 'linkedin', 'youtube'];
+export const DEFAULT_PLATFORMS: Platform[]        = ['twitter', 'linkedin', 'youtube', 'twitch'];
 export const DEFAULT_VARIANTS: BannerVariant[]    = ['basic', 'advanced'];
 export const DEFAULT_BANNER_THEMES: BannerTheme[] = ['dark', 'light'];

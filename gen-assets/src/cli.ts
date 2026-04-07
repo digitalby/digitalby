@@ -123,7 +123,7 @@ sharedOptions(
     .action(function(this: Command) { void run(this.opts()); }),
 );
 
-const VALID_PLATFORMS: Platform[]      = ['twitter', 'linkedin', 'youtube'];
+const VALID_PLATFORMS: Platform[]      = ['twitter', 'linkedin', 'youtube', 'twitch'];
 const VALID_VARIANTS:  BannerVariant[] = ['basic', 'advanced'];
 const VALID_BANNER_THEMES: BannerTheme[] = ['dark', 'light', 'yellow'];
 
