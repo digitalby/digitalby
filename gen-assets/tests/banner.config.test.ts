@@ -84,8 +84,8 @@ describe('scaling ratios produce sensible pixel values', () => {
     expect(LOGO_H_RATIO).toBeLessThanOrEqual(STRIP_H_RATIO);
   });
 
-  it('font weight is semibold (600)', () => {
-    expect(FONT_WEIGHT).toBe(600);
+  it('font weight is regular (400)', () => {
+    expect(FONT_WEIGHT).toBe(400);
   });
 });
 
