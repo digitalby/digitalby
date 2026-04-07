@@ -123,7 +123,7 @@ sharedOptions(
     .action(function(this: Command) { void run(this.opts()); }),
 );
 
-const VALID_PLATFORMS: Platform[]      = ['twitter', 'linkedin', 'youtube'];
+const VALID_PLATFORMS: Platform[]      = ['twitter', 'linkedin', 'youtube', 'twitch'];
 const VALID_VARIANTS:  BannerVariant[] = ['basic', 'advanced'];
 const VALID_BANNER_THEMES: BannerTheme[] = ['dark', 'light', 'yellow'];
 
@@ -161,7 +161,7 @@ async function runBanner(opts: {
   console.log(chalk.green(` done — ${result.banners.length} SVG(s) written`));
 
   for (const banner of result.banners) {
-    console.log(chalk.gray(`    ${banner.platform}/${banner.variant}/${banner.theme}.svg  (${banner.width}×${banner.height})`));
+    console.log(chalk.gray(`    ${banner.platform}/${banner.variant}/${banner.theme}.svg + .png  (${banner.width}×${banner.height})`));
   }
 
   console.log('');

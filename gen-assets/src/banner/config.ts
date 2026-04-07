@@ -25,13 +25,21 @@ export const PLATFORM_CONFIGS: Record<Platform, PlatformConfig> = {
     // YouTube's safe area is approximately the central 1546×423 region.
     safeZoneInset: 420,
   },
+  twitch: {
+    name: 'twitch',
+    displayName: 'Twitch',
+    width: 1200,
+    height: 480,
+    safeZoneInset: 40,
+  },
 };
 
 // Proportional scaling constants — all derived pixel values are computed as:
 //   px = Math.round(platformHeight * RATIO)
 // Changing a ratio adjusts the visual weight uniformly across all platforms.
 export const BORDER_RATIO   = 0.006;   // ~3px on Twitter (500px), ~9px on YouTube (1440px)
-export const FONT_RATIO     = 0.075;   // ~37px on Twitter, ~108px on YouTube
+export const FONT_RATIO     = 0.11;    // ~55px on Twitter, ~158px on YouTube
+export const FONT_WEIGHT    = 600;     // semibold
 export const LOGO_H_RATIO   = 0.18;    // wordmark rendered height
 export const STRIP_H_RATIO  = 0.22;    // client logo strip rendered height
 
@@ -66,6 +74,6 @@ export const BANNER_THEME_CONFIGS: Record<BannerTheme, BannerThemeConfig> = {
   },
 };
 
-export const DEFAULT_PLATFORMS: Platform[]        = ['twitter', 'linkedin', 'youtube'];
+export const DEFAULT_PLATFORMS: Platform[]        = ['twitter', 'linkedin', 'youtube', 'twitch'];
 export const DEFAULT_VARIANTS: BannerVariant[]    = ['basic', 'advanced'];
 export const DEFAULT_BANNER_THEMES: BannerTheme[] = ['dark', 'light'];

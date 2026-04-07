@@ -1,6 +1,6 @@
 import type { LogoAsset } from '../types';
 
-export type Platform = 'twitter' | 'linkedin' | 'youtube';
+export type Platform = 'twitter' | 'linkedin' | 'youtube' | 'twitch';
 export type BannerVariant = 'basic' | 'advanced';
 export type BannerTheme = 'dark' | 'light' | 'yellow';
 
@@ -36,6 +36,7 @@ export interface GeneratedBanner {
   variant: BannerVariant;
   theme: BannerTheme;
   svgPath: string;
+  pngPath: string;
   width: number;
   height: number;
 }

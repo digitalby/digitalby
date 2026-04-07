@@ -1,0 +1,59 @@
+name: Update LinkedIn Followers
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: linkedin-followers
+  cancel-in-progress: true
+
+jobs:
+  update:
+    name: Fetch and update follower count
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-social-stats-${{ hashFiles('scripts/social-stats/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-social-stats-
+
+      - name: Install dependencies
+        working-directory: scripts/social-stats
+        run: npm ci
+
+      - name: Type-check
+        working-directory: scripts/social-stats
+        run: npm run typecheck
+
+      - name: Fetch follower count and update README
+        working-directory: scripts/social-stats
+        env:
+          LINKEDIN_VANITY_NAME: digitalby
+          README_PATH: ../../README.md
+          LINKEDIN_LI_AT: ${{ secrets.LINKEDIN_LI_AT }}
+          LINKEDIN_JSESSIONID: ${{ secrets.LINKEDIN_JSESSIONID }}
+        run: npm run update
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet && exit 0
+          git commit -m "Update LinkedIn followers badge"
+          git push
