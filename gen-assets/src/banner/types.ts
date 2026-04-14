@@ -1,6 +1,6 @@
 import type { LogoAsset } from '../types';
 
-export type Platform = 'twitter' | 'linkedin' | 'youtube';
+export type Platform = 'twitter' | 'linkedin' | 'youtube' | 'upwork';
 export type BannerVariant = 'basic' | 'advanced';
 export type BannerTheme = 'dark' | 'light' | 'yellow';
 

@@ -25,6 +25,13 @@ export const PLATFORM_CONFIGS: Record<Platform, PlatformConfig> = {
     // YouTube's safe area is approximately the central 1546×423 region.
     safeZoneInset: 420,
   },
+  upwork: {
+    name: 'upwork',
+    displayName: 'Upwork',
+    width: 3200,
+    height: 320,
+    safeZoneInset: 24,
+  },
 };
 
 // Proportional scaling constants — all derived pixel values are computed as:
@@ -66,6 +73,6 @@ export const BANNER_THEME_CONFIGS: Record<BannerTheme, BannerThemeConfig> = {
   },
 };
 
-export const DEFAULT_PLATFORMS: Platform[]        = ['twitter', 'linkedin', 'youtube'];
+export const DEFAULT_PLATFORMS: Platform[]        = ['twitter', 'linkedin', 'youtube', 'upwork'];
 export const DEFAULT_VARIANTS: BannerVariant[]    = ['basic', 'advanced'];
 export const DEFAULT_BANNER_THEMES: BannerTheme[] = ['dark', 'light'];

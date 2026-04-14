@@ -8,19 +8,19 @@ Generates social media heading banners as SVG files.
 npm run banner
 ```
 
-Outputs 12 SVGs to `output/banners/` — 3 platforms × 2 variants × 2 themes.
+Outputs 16 SVGs to `output/banners/` — 4 platforms × 2 variants × 2 themes.
 
 ### Options
 
 ```bash
-npm run banner -- --platforms twitter,linkedin,youtube
+npm run banner -- --platforms twitter,linkedin,youtube,upwork
 npm run banner -- --variants basic,advanced
 npm run banner -- --themes dark,light,yellow
 ```
 
 | Flag | Values | Default |
 |---|---|---|
-| `--platforms` | `twitter`, `linkedin`, `youtube` | all three |
+| `--platforms` | `twitter`, `linkedin`, `youtube`, `upwork` | all four |
 | `--variants` | `basic`, `advanced` | both |
 | `--themes` | `dark`, `light`, `yellow` | `dark,light` |
 
@@ -38,6 +38,7 @@ output/banners/
 | Twitter/X | 1500 | 500 |
 | LinkedIn | 1584 | 396 |
 | YouTube | 2560 | 1440 |
+| Upwork | 3200 | 320 |
 
 ### Adding a platform
 
