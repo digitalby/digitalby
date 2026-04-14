@@ -18,12 +18,25 @@ export interface BannerDimensions {
 
 export function calcDimensions(platform: PlatformConfig): BannerDimensions {
   const h = platform.height;
+  const w = platform.width;
+  // Font and wordmark are anchored to an "effective height" that grows with
+  // width for extremely wide/short banners (e.g. 3200×320). Naive h*ratio
+  // produces unreadably small text on long banners. max(h, w/3) is a no-op
+  // for normal-aspect platforms (twitter 3:1, youtube 16:9) and kicks in
+  // only when the banner is wider than 3:1.
+  const effectiveH = Math.max(h, w / 3);
   const borderPx   = Math.max(1, Math.round(h * BORDER_RATIO));
-  const fontPx     = Math.round(h * FONT_RATIO);
-  const wordmarkH  = Math.round(h * LOGO_H_RATIO);
-  const wordmarkW  = Math.round(wordmarkH * WORDMARK_ASPECT_RATIO);
+  const fontPx     = Math.round(effectiveH * FONT_RATIO);
   const logoStripH = Math.round(h * STRIP_H_RATIO);
   const padding    = Math.round(h * 0.06);
+  // Clamp the wordmark so it can't collide with the logo strip when
+  // effectiveH pushes it beyond the real vertical budget.
+  const wordmarkCandidate = Math.round(effectiveH * LOGO_H_RATIO);
+  const verticalBudget    = h - 2 * (platform.safeZoneInset + borderPx + padding) - logoStripH;
+  const wordmarkH = (effectiveH > h && wordmarkCandidate > verticalBudget * 0.7)
+    ? Math.max(1, Math.floor(verticalBudget * 0.7))
+    : wordmarkCandidate;
+  const wordmarkW = Math.round(wordmarkH * WORDMARK_ASPECT_RATIO);
   return { borderPx, fontPx, wordmarkH, wordmarkW, logoStripH, padding };
 }
 
