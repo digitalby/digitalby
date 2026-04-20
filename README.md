@@ -51,5 +51,5 @@
 - 🎺 **[Xcode Sad Trombone](https://github.com/digitalby/xcode-sad-trombone)** — Plays a wah-wah when your Xcode build fails.
 - ⌨️ **[CEE IPA Layout](https://github.com/digitalby/cee-ipa-layout)** — A Mac keyboard layout for typing the International Phonetic Alphabet.
 
-<img src="https://pixel.digitalby.me/p/digitalby.png" width="1" height="1" alt="">
+<img src="https://pixel.digitalby.me/p/digitalby.png?source=github-profile&cache_bust=2" width="1" height="1" alt="">
 
