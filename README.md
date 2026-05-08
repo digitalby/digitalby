@@ -2,7 +2,7 @@
 
 #### Building in Tech since 2008-ish
 
-##### _I ❤️ Mobile, Game Dev, FOSS, XR, DevEx and UX, Accessibility!_
+<sup><sub>*I ❤️ Mobile, Game Dev, FOSS, XR, DevEx and UX, Accessibility!*</sub></sup>
 
 <a href="https://yuryv.info"><img src="assets/yuryv_info.png" alt="yuryv.info" height="28"></a>&nbsp;<a href="https://digitalby.me"><img src="assets/digitalby.png" alt="DIGITALBY" height="28"></a>
 
