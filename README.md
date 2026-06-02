@@ -45,6 +45,7 @@
 
 ## Open Source
 
+- 💧 **[glassmith](https://github.com/digitalby/glassmith)** — Forge iOS 26 Liquid Glass app icons from layered source: assemble, preview every appearance, and wire them into Xcode.
 - 🚀 **[Twitter Userscripts](https://github.com/digitalby/twitter-userscripts)** — Accessibility-first power-user scripts for Twitter/X.
 - ☁️ **[Is iCloud's Free Tier Still 5GB?](https://isicloud5gb.lol)** — Yes. Since 2011. Steve Jobs was still alive.
 - ⌨️ **[Colemak Keyboard Driver](https://github.com/digitalby/Colemak-Driver-Win)** — Pure C Windows kernel driver that adds [Colemak](https://en.wikipedia.org/wiki/Colemak) to any QWERTY machine, with an on/off toggle.
