@@ -48,7 +48,7 @@
 
 *A deep dive into how apps, games, people, and money interact.*
 
-- 🎙️ **[YV Podcast](https://podcast.yvinsights.com/)** — the rabbit hole, out loud. Narrative tech storytelling in the spirit of Planet Money and Acquired.
+- 🎙️ **[YV Podcast](https://podcast.yvinsights.com/)** — the Rabbit Hole, out loud. Narrative tech storytelling in the spirit of Planet Money and Acquired.
 - 📨 **[YV Insights](https://yvinsights.com)** — the deep dives, on Substack.
 - 💼 **[YV Insider](https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/)** — the same deep dives on LinkedIn, plus bonus pieces only there.
 
