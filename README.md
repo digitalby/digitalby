@@ -52,6 +52,14 @@
 - 📨 **[YV Insights](https://yvinsights.com)** — the deep dives, on Substack.
 - 💼 **[YV Insider](https://www.linkedin.com/newsletters/yv-insider-by-yuryv-info-7444467518737608704/)** — the same deep dives on LinkedIn, plus bonus pieces only there.
 
+## Community
+
+[![Join YV and Friends on Discord](https://img.shields.io/badge/YV%20and%20Friends-Join%20the%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/RXy4CjsPrS)
+
+- 💬 **[YV and Friends](https://discord.gg/RXy4CjsPrS)** — the back room where the Rabbit Holes happen out loud: startups, OSS projects, growth strategies, paywalls, and the messy reality of shipping, argued over in real time.
+
+It's still small enough that you walk in a regular, not a number. Pull up a chair before it gets loud.
+
 ## Open Source
 
 - 💧 **[glassmith](https://github.com/digitalby/glassmith)** — Forge iOS 26 Liquid Glass app icons from layered source: assemble, preview every appearance, and wire them into Xcode.
