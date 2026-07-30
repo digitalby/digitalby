@@ -1,0 +1,50 @@
+name: Monthly README Review
+
+on:
+  schedule:
+    - cron: "0 10 1 * *" # 1st of every month at 10:00 UTC
+  workflow_dispatch: # allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: readme-review
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: Review README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Review README with Claude
+        id: review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          improved=$(./scripts/readme-review/review.sh < README.md)
+          if diff -q <(echo "$improved") README.md &>/dev/null; then
+            echo "no-changes=true" >> "$GITHUB_OUTPUT"
+            echo "README is unchanged, nothing to do."
+          else
+            echo "$improved" > README.md
+            echo "no-changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create pull request
+        if: steps.review.outputs.no-changes == 'false'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/readme-review
+          delete-branch: true
+          title: "docs: monthly README improvements"
+          body: |
+            Automated monthly review of `README.md` by Claude.
+
+            Please review the suggested changes before merging.
+          commit-message: "docs: monthly README improvements"
+          labels: documentation
