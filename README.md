@@ -72,5 +72,9 @@ It's still small enough that you walk in a regular. Pull up a chair before it ge
 - 💧 **[glassmith](https://github.com/digitalby/glassmith)** — Forge iOS 26 Liquid Glass app icons from layered source. (WIP)
 - ⌨️ **[CEE IPA Layout](https://github.com/digitalby/cee-ipa-layout)** — A Mac keyboard layout for typing the International Phonetic Alphabet. (WIP)
 
+## Speaking
+
+- 🎤 **[Build a Second Brain with AI (and a Bit of Kotlin) at Home](https://youtu.be/y7iRJMkpu5U)** — Andersen Tech Talk on building a privacy-first "second brain" notetaker with Kotlin Multiplatform and AI. (Oct 2026)
+
 <img src="https://pixel.digitalby.me/p/digitalby.png?source=github-profile&cache_bust=2" width="1" height="1" alt="">
 
